@@ -1,6 +1,5 @@
 let displayValue = 0;
 let secondOperator = 0;
-let thirdOperator = 0;
 let operatorChosen = '';
 
 function add(a,b) {
@@ -24,7 +23,6 @@ function operate(a, b, operator) {
     else if (operator === '-') return subtract(a,b);
     else if (operator === '*') return multiply(a,b);
     else if (operator === '/') return divide(a,b);
-    else throw "Unknown operator";
 }
 
 
@@ -198,13 +196,22 @@ const onebtn = document.querySelector('#one');
  const operatebtn = document.querySelector('#equals');
  operatebtn.addEventListener("click", operateFunction) 
  function operateFunction() {
+    if(operatorChosen === '/' && secondOperator === 0) {
+        document.getElementById("display").textContent = 'yikes';
+        console.log('yikes');
+        displayValue = 0;
+        secondOperator= 0;
+        operatorChosen = '';
+    }
+    else {
     let a = displayValue;
     let b = secondOperator;
     let operator = operatorChosen;
     let equals = operate(a, b, operator);
     displayValue = equals;
     document.getElementById("display").textContent = equals;
-    console.log(equals);
+    // console.log(equals);
+    }
  }
 
 const clearbtn = document.querySelector('#clear');
@@ -214,5 +221,4 @@ function clearFunction() {
     operatorChosen = '';
     displayValue = 0;
     secondOperator = 0;
-    thirdOperator = 0;
 }
