@@ -3,8 +3,6 @@ let secondOperator = 0;
 let thirdOperator = 0;
 let operatorChosen = '';
 
-
-
 function add(a,b) {
     return a + b;
   }
@@ -130,7 +128,7 @@ const onebtn = document.querySelector('#one');
  const ninebtn = document.querySelector('#nine');
  ninebtn.addEventListener("click", nineFunction) 
  function nineFunction() {
-    document.getElementById("display").textContent = "6";
+    document.getElementById("display").textContent = "9";
     if(displayValue == 0){
         return displayValue = 9;
     }
@@ -139,6 +137,17 @@ const onebtn = document.querySelector('#one');
     }
  }
 
+ const zerobtn = document.querySelector('#zero');
+ zerobtn.addEventListener("click", zeroFunction) 
+ function zeroFunction() {
+    document.getElementById("display").textContent = "0";
+    if(displayValue == 0){
+        return displayValue = 0;
+    }
+    else {
+        return secondOperator = 0;
+    }
+ }
 
 
  //// operator buttons 

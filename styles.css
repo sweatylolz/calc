@@ -6,17 +6,30 @@ body {
 
 #display {
     border: 2px solid black;
-    width: 304px;
+    width: auto;
     height: 50px;
-    font-size: larger;
+    font-size: 30pt;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: right;
+    align-items: center;
 }
 
 button {
     width: 100px;
-    height: 50px;
-    margin: 0pxs;
+    height: 75px;
+    font-size: x-large;
 }
 
 #calculator {
     border: gray 4px solid; 
+    padding: 5px;
+    background-color: lightgray;
 }   
+ 
+.row1 {
+    padding-top: 5px;
+}
