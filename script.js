@@ -195,5 +195,12 @@ const onebtn = document.querySelector('#one');
     console.log(equals);
  }
 
+const clearbtn = document.querySelector('#clear');
+clearbtn.addEventListener("click", clearFunction)
+function clearFunction() {
+    document.getElementById("display").textContent = '';
+    operatorChosen = '';
+    displayValue = 0;
+    secondOperator = 0;
 
- 
+}
