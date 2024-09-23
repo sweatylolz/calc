@@ -1,6 +1,8 @@
 let displayValue = 0;
 let secondOperator = 0;
+let thirdOperator = 0;
 let operatorChosen = '';
+
 
 
 function add(a,b) {
@@ -191,6 +193,7 @@ const onebtn = document.querySelector('#one');
     let b = secondOperator;
     let operator = operatorChosen;
     let equals = operate(a, b, operator);
+    displayValue = equals;
     document.getElementById("display").textContent = equals;
     console.log(equals);
  }
@@ -202,5 +205,5 @@ function clearFunction() {
     operatorChosen = '';
     displayValue = 0;
     secondOperator = 0;
-
+    thirdOperator = 0;
 }
