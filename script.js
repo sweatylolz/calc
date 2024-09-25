@@ -1,6 +1,7 @@
 let displayValue = 0;
 let secondOperator = 0;
 let operatorChosen = '';
+let clicked = false;
 
 function add(a,b) {
     return a + b;
@@ -198,7 +199,7 @@ const onebtn = document.querySelector('#one');
  function operateFunction() {
     if(operatorChosen === '/' && secondOperator === 0) {
         document.getElementById("display").textContent = 'yikes';
-        console.log('yikes');
+        // console.log('yikes');
         displayValue = 0;
         secondOperator= 0;
         operatorChosen = '';
@@ -209,7 +210,7 @@ const onebtn = document.querySelector('#one');
     let operator = operatorChosen;
     let equals = operate(a, b, operator);
     displayValue = equals;
-    document.getElementById("display").textContent = equals;
+    document.getElementById("display").textContent = Math.round(equals * 100) / 100;
     // console.log(equals);
     }
  }
