@@ -24,8 +24,8 @@ button {
     font-size: x-large;
 }
 
-button:hover, #clear:hover {
-    background-color: gray;
+button:hover {
+    background-color: rgb(167, 166, 166);
 }
 
 #calculator {
@@ -39,10 +39,18 @@ button:hover, #clear:hover {
 }
 
 .operand {
-    background-color: lightblue;
+    background-color: rgb(216, 235, 242);
+}
+
+.operand:hover {
+    background-color: rgb(138, 198, 218);
 }
 
 #clear {
+    background-color: #e7bab1;
+}
+
+#clear:hover {
     background-color: lightcoral;
 }
 
