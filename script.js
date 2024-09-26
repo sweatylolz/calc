@@ -41,7 +41,7 @@ function operate(a, b, operator) {
     else {
       secondOperator = secondOperator + i.value;
       calcDisplay.innerText = secondOperator;
-      console.log(secondOperator)
+      console.log(secondOperator);
       return secondOperator;
     }
   });
@@ -60,34 +60,25 @@ function operate(a, b, operator) {
  const subtractbtn = document.querySelector('#subtract');
  subtractbtn.addEventListener("click", subtractFunction)
  function subtractFunction() {
-    if(operatorChosen == ''){
-        return operatorChosen = '-';
-    }
-    else {
-        return operatorChosen = '-';
-    }
+    secondOperator = '';
+    clicked = true;
+    return operatorChosen = '-';
  }
 
  const multiplybtn = document.querySelector('#multiply');
  multiplybtn.addEventListener("click", multiplyFunction)
  function multiplyFunction() {
-    if(operatorChosen == ''){
-        return operatorChosen = '*';
-    }
-    else {
-        return operatorChosen = '*';
-    }
+    secondOperator = '';
+    clicked = true;
+    return operatorChosen = '*';
  }
 
  const dividebtn = document.querySelector('#divide');
  dividebtn.addEventListener("click", divideFunction)
  function divideFunction() {
-    if(operatorChosen == ''){
-        return operatorChosen = '/';
-    }
-    else {
-        return operatorChosen = '/';
-    }
+    secondOperator = '';
+    clicked = true;
+    return operatorChosen = '/';
  }
 
  const operatebtn = document.querySelector('#equals');
