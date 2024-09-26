@@ -52,12 +52,9 @@ function operate(a, b, operator) {
  const addbtn = document.querySelector('#add');
  addbtn.addEventListener("click", addFunction) 
  function addFunction() {
-    if(operatorChosen == ''){
-        return operatorChosen = '+';
-    }
-    else {
-        return operatorChosen = '+';
-    }
+    secondOperator = '';
+    clicked = true;
+    return operatorChosen = '+';
  }
 
  const subtractbtn = document.querySelector('#subtract');
