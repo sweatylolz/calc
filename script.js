@@ -105,13 +105,15 @@ function operate(a, b, operator) {
         clearFunction();
     }
     else {
-    let a = displayValue;
-    let b = secondOperator;
-    let operator = operatorChosen;
-    let equals = operate(a, b, operator);
-    displayValue = equals;
-    document.getElementById("display").textContent = Math.round(equals * 100) / 100;
-    // console.log(equals);
+        let a = Number(displayValue);
+        let b = Number(secondOperator);
+        let operator = operatorChosen;
+        let equals = operate(a, b, operator);
+        displayValue = Math.round(equals * 100) / 100;
+        document.getElementById("display").textContent = equals;
+        clicked = false;
+        console.log('equals: ' + equals);
+        console.log('displayValuenow: ' + displayValue);
     }
  }
 
