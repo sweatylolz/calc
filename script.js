@@ -92,7 +92,7 @@ function operate(a, b, operator) {
         operatorChosen = '';
     }
     //incase = is hit before an operator or second number is input
-    else if(operatorChosen === '' || secondOperator === null) {
+    else if(operatorChosen === '' || secondOperator === '') {
         clearFunction();
     }
     else {
@@ -112,7 +112,8 @@ const clearbtn = document.querySelector('#clear');
 clearbtn.addEventListener("click", clearFunction)
 function clearFunction() {
     document.getElementById("display").textContent = '';
+    displayValue = '';
+    secondOperator = '';
     operatorChosen = '';
-    displayValue = 0;
-    secondOperator = null;
+    clicked = false;
 }
