@@ -1,7 +1,10 @@
-let displayValue = 0;
-let secondOperator = 0;
+let displayValue = '';
+let secondOperator = '';
 let operatorChosen = '';
 let clicked = false;
+let calcDisplay = document.getElementById("display");
+var numberbtns = document.querySelectorAll('.number');
+var operatorbtns = document.querySelectorAll('operand');
 
 function add(a,b) {
     return a + b;
@@ -27,126 +30,22 @@ function operate(a, b, operator) {
 }
 
 
-// *** assigns numbers when buttons are clicked 
-const onebtn = document.querySelector('#one');
- onebtn.addEventListener("click", oneFunction)
- function oneFunction() {
-    document.getElementById("display").textContent = "1";
-    if(displayValue == 0){
-        return displayValue = 1;
+  numberbtns.forEach(function (i) {
+  i.addEventListener('click', function() {
+    if(clicked === false) {
+      displayValue = displayValue + i.value;
+      calcDisplay.innerText = displayValue;
+      console.log(displayValue);
+      return displayValue
     }
     else {
-        return secondOperator = 1;
+      secondOperator = secondOperator + i.value;
+      calcDisplay.innerText = secondOperator;
+      console.log(secondOperator)
+      return secondOperator;
     }
- }
-
- const twobtn = document.querySelector('#two');
- twobtn.addEventListener("click", twoFunction) 
- function twoFunction() {
-    document.getElementById("display").textContent = "2";
-    if(displayValue == 0){
-        return displayValue = 2;
-    }
-    else {
-        return secondOperator = 2;
-    }
- }
-
- const threebtn = document.querySelector('#three');
- threebtn.addEventListener("click", threeFunction) 
- function threeFunction() {
-    document.getElementById("display").textContent = "3";
-    if(displayValue == 0){
-        return displayValue = 3;
-    }
-    else {
-        return secondOperator = 3;
-    }
- }
-
- const fourbtn = document.querySelector('#four');
- fourbtn.addEventListener("click", fourFunction) 
- function fourFunction() {
-    document.getElementById("display").textContent = "4";
-    if(displayValue == 0){
-        return displayValue = 4;
-    }
-    else {
-        return secondOperator = 4;
-    }
- }
-
- const fivebtn = document.querySelector('#five');
- fivebtn.addEventListener("click", fiveFunction) 
- function fiveFunction() {
-    document.getElementById("display").textContent = "5";
-    if(displayValue == 0){
-        return displayValue = 5;
-    }
-    else {
-        return secondOperator = 5;
-    }
- }
- 
- const sixbtn = document.querySelector('#six');
- sixbtn.addEventListener("click", sixFunction) 
- function sixFunction() {
-    document.getElementById("display").textContent = "6";
-    if(displayValue == 0){
-        return displayValue = 6;
-    }
-    else {
-        return secondOperator = 6;
-    }
- }
-
- const sevenbtn = document.querySelector('#seven');
- sevenbtn.addEventListener("click", sevenFunction) 
- function sevenFunction() {
-    document.getElementById("display").textContent = "7";
-    if(displayValue == 0){
-        return displayValue = 7;
-    }
-    else {
-        return secondOperator = 7;
-    }
- }
-
- const eightbtn = document.querySelector('#eight');
- eightbtn.addEventListener("click", eightFunction) 
- function eightFunction() {
-    document.getElementById("display").textContent = "8";
-    if(displayValue == 0){
-        return displayValue = 8;
-    }
-    else {
-        return secondOperator = 8;
-    }
- }
-
- const ninebtn = document.querySelector('#nine');
- ninebtn.addEventListener("click", nineFunction) 
- function nineFunction() {
-    document.getElementById("display").textContent = "9";
-    if(displayValue == 0){
-        return displayValue = 9;
-    }
-    else {
-        return secondOperator = 9;
-    }
- }
-
- const zerobtn = document.querySelector('#zero');
- zerobtn.addEventListener("click", zeroFunction) 
- function zeroFunction() {
-    document.getElementById("display").textContent = "0";
-    if(displayValue == 0){
-        return displayValue = 0;
-    }
-    else {
-        return secondOperator = 0;
-    }
- }
+  });
+});
 
 
  //// operator buttons 
@@ -201,8 +100,12 @@ const onebtn = document.querySelector('#one');
         document.getElementById("display").textContent = 'yikes';
         // console.log('yikes');
         displayValue = 0;
-        secondOperator= 0;
+        secondOperator = null;
         operatorChosen = '';
+    }
+    //incase = is hit before an operator or second number is input
+    else if(operatorChosen === '' || secondOperator === null) {
+        clearFunction();
     }
     else {
     let a = displayValue;
@@ -221,5 +124,5 @@ function clearFunction() {
     document.getElementById("display").textContent = '';
     operatorChosen = '';
     displayValue = 0;
-    secondOperator = 0;
+    secondOperator = null;
 }
