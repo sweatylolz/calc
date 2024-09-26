@@ -35,13 +35,13 @@ function operate(a, b, operator) {
     if(clicked === false) {
       displayValue = displayValue + i.value;
       calcDisplay.innerText = displayValue;
-      console.log(displayValue);
+      console.log('DisplayValue: ' + displayValue);
       return displayValue
     }
     else {
       secondOperator = secondOperator + i.value;
       calcDisplay.innerText = secondOperator;
-      console.log(secondOperator);
+      console.log('second op: ' + secondOperator);
       return secondOperator;
     }
   });
@@ -84,11 +84,10 @@ function operate(a, b, operator) {
  const operatebtn = document.querySelector('#equals');
  operatebtn.addEventListener("click", operateFunction) 
  function operateFunction() {
-    if(operatorChosen === '/' && secondOperator === 0) {
+    if(operatorChosen === '/' && secondOperator === '0') {
         document.getElementById("display").textContent = 'yikes';
-        // console.log('yikes');
-        displayValue = 0;
-        secondOperator = null;
+        displayValue = '';
+        secondOperator = '';
         operatorChosen = '';
     }
     //incase = is hit before an operator or second number is input
@@ -101,10 +100,10 @@ function operate(a, b, operator) {
         let operator = operatorChosen;
         let equals = operate(a, b, operator);
         displayValue = Math.round(equals * 100) / 100;
-        document.getElementById("display").textContent = equals;
+        document.getElementById("display").textContent = displayValue;
         clicked = false;
-        console.log('equals: ' + equals);
-        console.log('displayValuenow: ' + displayValue);
+        console.log('operator chosen: ' + operatorChosen);
+        console.log('displayValue: ' + displayValue);
     }
  }
 
