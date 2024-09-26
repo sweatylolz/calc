@@ -1,7 +1,7 @@
 body {
     display: flex;
     justify-content: center;  
-
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #display {
@@ -24,6 +24,10 @@ button {
     font-size: x-large;
 }
 
+button:hover, #clear:hover {
+    background-color: gray;
+}
+
 #calculator {
     border: gray 4px solid; 
     padding: 5px;
@@ -33,3 +37,14 @@ button {
 .row1 {
     padding-top: 5px;
 }
+
+.operand {
+    background-color: lightblue;
+}
+
+#clear {
+    background-color: lightcoral;
+}
+
+
+
