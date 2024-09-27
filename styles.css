@@ -18,6 +18,7 @@ body {
     align-items: center;
 }
 
+
 button {
     width: 100px;
     height: 75px;
@@ -36,6 +37,10 @@ button:hover {
  
 .row1 {
     padding-top: 5px;
+}
+
+#equals {
+    width: 100%;
 }
 
 .operand {
